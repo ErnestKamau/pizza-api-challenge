@@ -6,6 +6,7 @@ from .models.pizza import Pizza
 from .models.restaurant_pizza import RestaurantPizza
 from .controllers.restaurant_controller import get_all_restaurants, get_by_id, delete_restaurant
 from .controllers.pizza_controller import all_pizzas
+from .controllers.restaurant_pizza_controller import create_restaurant_pizza
 
 
 
@@ -43,6 +44,10 @@ def del_restaurant(id):
 def get_all_pizzas():
     return all_pizzas()
 
+
+@app.route('/restaurant_pizzas', methods=["POST"])
+def add_restaurant_pizzas():
+    return create_restaurant_pizza()
 
     
     

@@ -21,7 +21,7 @@ def create_restaurant_pizza():
         r = new.to_dict()
         
         return make_response(r, 201)
-    
+   
     except Exception:
         db.session.rollback()
         return make_response(jsonify({ "errors": ["Price must be between 1 and 30"] }), 400)
