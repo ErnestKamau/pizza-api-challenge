@@ -1,8 +1,7 @@
 from flask import jsonify, request, make_response
 from ..models import db
 from ..models.restaurant import Restaurant
-from ..models.restaurant_pizza import RestaurantPizza
-from ..models.pizza import Pizza
+
 
 
 def get_all_restaurants():

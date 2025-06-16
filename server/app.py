@@ -5,6 +5,7 @@ from .models.restaurant import Restaurant
 from .models.pizza import Pizza
 from .models.restaurant_pizza import RestaurantPizza
 from .controllers.restaurant_controller import get_all_restaurants, get_by_id, delete_restaurant
+from .controllers.pizza_controller import all_pizzas
 
 
 
@@ -36,9 +37,16 @@ def get_restaurant(restaurant_id):
 @app.route('/restaurant/<int:id>', methods=["DELETE"])
 def del_restaurant(id):
     return delete_restaurant(id)
+
+
+@app.route('/pizzas', methods=["GET"])
+def get_all_pizzas():
+    return all_pizzas()
+
+
+    
     
     
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
-
 
