@@ -4,7 +4,7 @@ from . import db
 from .restaurant_pizza import RestaurantPizza
 
 
-class Restaurant(db.Models, SerializerMixin):
+class Restaurant(db.Model, SerializerMixin):
     __tablename__ = 'restaurants'
     serialize_rules = ('-restaurant_pizzas.restaurant',)
     

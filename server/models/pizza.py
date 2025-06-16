@@ -1,4 +1,3 @@
-
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy_serializer import SerializerMixin
 from . import db
@@ -6,7 +5,7 @@ from .restaurant_pizza import RestaurantPizza
 
 
 
-class Pizza(db.Models, SerializerMixin):
+class Pizza(db.Model, SerializerMixin):
     __tablename__ = 'pizzas'
     serialize_rules = ('-restaurant_pizzas.pizza',)
     

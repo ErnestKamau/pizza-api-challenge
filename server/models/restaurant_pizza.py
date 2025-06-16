@@ -3,7 +3,7 @@ from . import db
 
 
 
-class RestaurantPizza(db.Models, SerializerMixin):
+class RestaurantPizza(db.Model, SerializerMixin):
     __tablename__ = 'restaurant_pizzas'
     serialize_rules = ('-restaurant.restaurant_pizzas', '-pizza.restaurant_pizzas',)
     
