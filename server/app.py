@@ -4,6 +4,7 @@ from .models import db
 from .models.restaurant import Restaurant
 from .models.pizza import Pizza
 from .models.restaurant_pizza import RestaurantPizza
+from .controllers.restaurant_controller import get_all_restaurants, get_by_id, delete_restaurant
 
 
 
@@ -19,8 +20,22 @@ Migrate(app, db)
 @app.route('/')
 def index():
     body = {"message": "Welcome to pizza restaurants API"}
-    
     return body
+
+
+@app.route('/restaurants', methods=["Get"])
+def get_restaurants():
+    return get_all_restaurants()
+
+
+@app.route('/restaurants/<int:restaurant_id>', methods=["GET"])
+def get_restaurant(restaurant_id):
+    return get_by_id(restaurant_id)
+
+
+@app.route('/restaurant/<int:id>', methods=["DELETE"])
+def del_restaurant(id):
+    return delete_restaurant(id)
     
     
 if __name__ == '__main__':
