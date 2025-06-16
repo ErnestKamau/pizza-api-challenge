@@ -33,5 +33,5 @@ def delete_restaurant(restaurant_id):
     
     db.session.delete(restaurant)
     db.session.commit()
-    return make_response(jsonify({"error": "No Content"}), 204)
+    return '', 204
 
