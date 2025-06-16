@@ -35,7 +35,7 @@ def get_restaurant(restaurant_id):
     return get_by_id(restaurant_id)
 
 
-@app.route('/restaurant/<int:id>', methods=["DELETE"])
+@app.route('/restaurants/<int:id>', methods=["DELETE"])
 def del_restaurant(id):
     return delete_restaurant(id)
 
